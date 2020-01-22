@@ -12,6 +12,7 @@ from bokeh.models.widgets import Tabs
 from scripts.timeline import timeline_tab
 from scripts.homepage import homepage_tab
 from scripts.stacked_bars import stacked_bars
+from scripts.heatmap import heatmap
 # TODO: include all scripts
 
 # Read data into dataframes
@@ -23,10 +24,11 @@ marriage = pd.read_csv(join(dirname(__file__), 'data', 'Marriage.csv'))
 tab = homepage_tab()
 tab1 = timeline_tab(birth, marriage, death)
 tab2 = stacked_bars(birth, death)
+tab3 = heatmap()
 # TODO: fix the tabs with 2 parameters
 
 # Put all the tabs into one application
-tabs = Tabs(tabs = [tab, tab1, tab2])
+tabs = Tabs(tabs = [tab, tab1, tab2, tab3])
 
 # Put the tabs in the current document for display
 curdoc().add_root(tabs)
