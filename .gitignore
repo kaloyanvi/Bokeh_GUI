@@ -1,2 +1,3 @@
 *.csv
 /bokeh_app/data/*
+/bokeh_app/scripts/__pycache__/

@@ -24,7 +24,7 @@ marriage = pd.read_csv(join(dirname(__file__), 'data', 'Marriage.csv'))
 tab = homepage_tab()
 tab1 = timeline_tab(birth, marriage, death)
 tab2 = stacked_bars(birth, death)
-tab3 = heatmap()
+tab3 = heatmap(birth)
 # TODO: fix the tabs with 2 parameters
 
 # Put all the tabs into one application
