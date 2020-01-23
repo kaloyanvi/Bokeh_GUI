@@ -10,16 +10,7 @@ from bokeh.models.widgets import Slider
 from bokeh.models import ColumnDataSource
 
 def heatmap(birth_data):
-    from bokeh.sampledata.unemployment1948 import data
-    data['Year'] = data['Year'].astype(str)
-    data = data.set_index('Year')
-    data.drop('Annual', axis=1, inplace=True)
-    data.columns.name = 'Month'
-
-    #years = list(data.index)
-    #months = list(data.columns)
-
-
+    
     df_births = birth_data[['Day', 'Month', 'Year']]
     df_births = df_births.dropna()
     df_births = df_births.sort_values(by=['Year'])
