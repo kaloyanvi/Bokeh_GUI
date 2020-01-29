@@ -33,10 +33,6 @@ def heatmap(birth_data):
     months = list(new_df.Month.unique())
     years.sort()
     months.sort()
-    # reshape to 1D array or rates with a month and year for each row.
-    #df = pd.DataFrame(data.stack(), columns=['rate']).reset_index()
-    #print(df)
-    # this is the colormap from the original NYTimes plot
     colors = ["#75968f", "#a5bab7", "#c9d9d3", "#e2e2e2", "#dfccce", "#ddb7b1", "#cc7878", "#933b41", "#550b1d"]
     mapper = LinearColorMapper(palette=colors, low=int(min_pal), high=int(max_pal))
     test = df_births.groupby(['Year', 'Month'])['Entry'].value_counts()
